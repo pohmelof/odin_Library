@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Bree Serif', serif;;
+}
+body {
+    padding-top: 70px;
+    min-height: 100vh;
+    background-image: linear-gradient(rgb(206, 178, 141), rgb(255, 243, 225));
+}
+button {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+}
+.btn-container {
+    width: 100%;
+    border-bottom: 2px solid rgb(71, 58, 40);
+    background-color: rgb(161, 133, 97);
+    position: fixed;
+    z-index: 90;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    padding: 10px 40px;
+}
+.btn-container > div {
+    display: flex;
+    gap: 30px;
+}
+
+.bg-shield {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 95;
+    background-color:rgba(0, 0, 0, 0.7)
+}
+.off {
+    display: none;
+}
+input {
+    width: 100%;
+}
+input[type="color"] {
+    max-width: 50px;
+    height: 40px;
+    cursor: pointer;
+} 
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    position: fixed;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: white;
+    padding: 20px 40px;
+    gap: 10px;
+    border: 3px solid;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+.form-hidden {
+    transform: translateX(-50%) translateY(-150%);
+}
+.add-book-form p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.close {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+}
+.btn-active {
+    background-color: black;
+    color: white;
+}
+
+.close:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn {
+    padding: 6px 30px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: rgb(192, 192, 192);
+}
+.btn:active,
+.close:active {
+    transform: scale(0.9);
+}
+.book {
+    --paper-color: rgb(214, 209, 190);
+    --cover-color: rgb(6, 77, 124);
+    --title-text-color: rgb(218, 202, 60);
+    width: 300px;
+    height: 450px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 270px 30px;
+    grid-template-rows: 420px 30px;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3))
+}
+.cover {
+    border: 2px solid var(--cover-color);
+    background-color: var(--cover-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--title-text-color)
+}
+.title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.pages {
+    font-size: 0.9rem;
+}
+.delete {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    border: none;
+    background: transparent;
+}
+.read {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 40px;
+    right: 40px;
+    color: var(--title-text-color)
+}
+.read-true {
+    color: green;
+}
+.read-false {
+    color: rgb(173, 4, 4);
+}
+.trash {
+    width: 15px;
+    color: var(--title-text-color);
+}
+
+.read-true,
+.read-false,
+.trash {
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+}
+
+.set-read {
+    background: transparent;
+    border: none;
+    margin: 0;
+    font-size: 2rem;
+    user-select: none;
+}
+.delete:hover,
+.set-read:hover {
+    filter: brightness(0.8);
+}
+.delete:active,
+.set-read:active {
+    transform: scale(0.9);
+}
+
+.pages-right {
+    transform: skewY(45deg) translateY(15px);
+    border-right: 4px solid var(--cover-color);
+    background-color: var(--paper-color) 
+}
+.pages-bottom {
+    transform: skewX(45deg) translateX(15px);
+    border-left: 4px solid var(--cover-color);
+    border-bottom: 4px solid var(--cover-color);
+    background-color: var(--paper-color);
+}

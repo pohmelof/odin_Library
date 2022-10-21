@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="btn-container">
+      <div class="add-cont">
+        <button class="new-book btn">Add Book</button>
+        <button class="reset-bookshelf btn">Reset bookshelf</button>
+      </div>
+      <div class="filter-container">
+        <button class="btn filter unread">Show unread</button>
+        <button class="btn filter show-read">Show read</button>
+      </div>
+    </div>
+    <form class="add-book-form form-hidden" action="send.to/123" method="post">
+      <button type="button" class="close">✕</button>
+      <h2>Add a book</h2>
+      <p>
+        <label for="bookTitle">Title</label>
+        <input type="text" id="bookTitle" name="bookTitle" required />
+      </p>
+      <p>
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" required />
+      </p>
+      <p>
+        <label for="numPages">Number of pages</label>
+        <input
+          type="number"
+          id="numPages"
+          name="numPages"
+          min="1"
+          max="9999"
+          required
+        />
+      </p>
+      <p>
+        <label for="readStatus">Have you read it?</label>
+        <input type="checkbox" id="readStatus" name="readStatus" />
+      </p>
+      <p>
+        <label for="coverColor">Cover color</label>
+        <input type="color" id="coverColor" name="coverColor" value="#3e5c22" />
+      </p>
+      <p>
+        <label for="textColor">Text color</label>
+        <input type="color" id="textColor" name="textColor" value="#daca3c" />
+      </p>
+      <button type="submit" class="addBookBtn btn">Add</button>
+    </form>
+
+    <div class="container"></div>
+    <div class="bg-shield off"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
