@@ -1,10 +1,12 @@
-function Book(obj) {
-  this.title = obj.title;
-  this.author = obj.author;
-  this.numPages = obj.numPages;
-  this.read = obj.read;
-  this.coverColor = obj.coverColor;
-  this.textColor = obj.textColor;
+class Book {
+  constructor(obj) {
+    this.title = obj.title;
+    this.author = obj.author;
+    this.numPages = obj.numPages;
+    this.read = obj.read;
+    this.coverColor = obj.coverColor;
+    this.textColor = obj.textColor;
+  }
 }
 
 // Book.prototype.setRead = () => {
